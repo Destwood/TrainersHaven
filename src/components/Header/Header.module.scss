@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.icon {
+  height: 2rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.icon:active {
+  transform: scale(1.1);
+}
+
+// logo
+
+.logo {
+  height: 2rem;
+}
+
+// nav
+
+// actions
+
+.actions {
+  display: flex;
+}
+
+.cart {
+}
+
+.logoContainer {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+// search
+
+.search {
+  display: flex;
+  padding: 0.2rem 0.5rem;
+}
+
+.search:hover {
+  background-color: rgb(223, 223, 223);
+  border-radius: 1rem;
+  cursor: text;
+}
+
+.searchInput {
+  width: 10rem;
+  border: none;
+  margin: 0 0.5rem;
+  background-color: inherit;
+  font-size: 1rem;
+}
+
+.searchInput::placeholder {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.searchInput:focus {
+  width: 10rem;
+  outline: none;
+  border: none;
+  margin: 0 0.5rem;
+}
+
+.searchIcon {
+}
+
+.actions .icon {
+  padding: 0.1rem;
+}
+
+.actions .icon:hover {
+  background-color: rgb(223, 223, 223);
+  border-radius: 50%;
+}
