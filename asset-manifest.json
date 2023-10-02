@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/TrainersHaven/static/css/main.0a15aadb.css",
+    "main.js": "/TrainersHaven/static/js/main.ba280487.js",
+    "static/media/logo.svg": "/TrainersHaven/static/media/logo.394c242844de933fdb8dccde6babf4ec.svg",
+    "static/media/fav.svg": "/TrainersHaven/static/media/fav.9768ef5f6b2d897e7435d1936b50dad2.svg",
+    "index.html": "/TrainersHaven/index.html",
+    "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
+    "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
+    "main.0a15aadb.css.map": "/TrainersHaven/static/css/main.0a15aadb.css.map",
+    "main.ba280487.js.map": "/TrainersHaven/static/js/main.ba280487.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a15aadb.css",
+    "static/js/main.ba280487.js"
+  ]
+}
