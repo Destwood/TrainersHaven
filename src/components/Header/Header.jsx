@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Header.module.scss";
 
 import logo from "../../assets/logo.svg";
@@ -7,30 +7,101 @@ import fav from "../../assets/fav.svg";
 import cart from "../../assets/cart.svg";
 
 function Header() {
+  const [isInputFocused, setInputFocus] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [isBurgerChacked, setisBurgerChacked] = useState(false);
+
+  const handleBurgerChange = (event) => {
+    setisBurgerChacked(event.target.checked);
+  };
+
+  const handleSearch = () => {
+    console.log("Search value:", searchValue);
+  };
+
+  const handleInputFocus = () => {
+    setInputFocus(true);
+  };
+
+  const handleInputBlur = () => {
+    setInputFocus(false);
+  };
+
   return (
-    <div className={style.header}>
-      <div className={style.logoContainer}>
-        <img src={logo} alt="logo" className={`${style.icon} ${style.logo}`} />
-        Trainers Haven
-      </div>
-      <div className="">nav</div>
-      <div className={style.actions}>
-        <div className={style.search}>
-          <div className={style.searchIconContainer}>
+    <div className={style.wrapper}>
+      <div className={style.header}>
+        <div>
+          <div className={style.logo}>
+            <img src={logo} alt="logo" className={`${style.icon} `} />
+            <p>Trainers Haven</p>
+          </div>
+        </div>
+
+        {/* conteiner for adaprive reverse */}
+        {/* nav */}
+        <div className={style.nav}>
+          <div className={style.link}>Home</div>
+          <div className={style.link}>Cart</div>
+          <div className={style.link}>Catalog</div>
+        </div>
+
+        {/* actions */}
+        <div className={style.actions}>
+          <div
+            className={`${style.search} ${
+              isInputFocused || searchValue ? style.inputFocused : ""
+            }`}
+          >
             <img
               src={search}
               alt="search"
               className={`${style.icon} ${style.searchIcon}`}
+              onClick={() => {
+                handleSearch();
+                setSearchValue("");
+              }}
             />
+            <input
+              type="text"
+              placeholder="Search"
+              className={style.searchInput}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <div
+              className={`${searchValue ? style.clear : style.hide}`}
+              onClick={() => {
+                setSearchValue("");
+              }}
+            >
+              X
+            </div>
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            className={style.searchInput}
+          <img src={fav} alt="fav" className={`${style.icon} ${style.fav}`} />
+          <img
+            src={cart}
+            alt="cart"
+            className={`${style.icon} ${style.cart}`}
           />
+          <label className={style.burger} htmlFor="burger">
+            <input
+              type="checkbox"
+              id="burger"
+              onChange={handleBurgerChange}
+              checked={isBurgerChacked}
+            />
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
         </div>
-        <img src={fav} alt="fav" className={`${style.icon} ${style.fav}`} />
-        <img src={cart} alt="cart" className={`${style.icon} ${style.cart}`} />
+      </div>
+      <div className={`${style.dropdown} ${isBurgerChacked ? "" : style.none}`}>
+        <div className={style.link}>Home</div>
+        <div className={style.link}>Cart</div>
+        <div className={style.link}>Catalog</div>
       </div>
     </div>
   );

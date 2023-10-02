@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
-import Card from "./components/Card/Card";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
