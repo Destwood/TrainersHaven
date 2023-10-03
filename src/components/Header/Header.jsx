@@ -98,7 +98,11 @@ function Header() {
           </label>
         </div>
       </div>
-      <div className={`${style.dropdown} ${isBurgerChacked ? "" : style.none}`}>
+      <div
+        className={`${style.dropdown} ${
+          isBurgerChacked ? style.flex : style.none
+        }`}
+      >
         <div className={style.link}>Home</div>
         <div className={style.link}>Cart</div>
         <div className={style.link}>Catalog</div>

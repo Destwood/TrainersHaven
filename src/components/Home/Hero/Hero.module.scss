@@ -1,0 +1,14 @@
+.container {
+  background-color: #e5e5e3;
+  display: flex;
+  margin-bottom: 4rem;
+  div {
+    flex: 1;
+  }
+}
+
+.content {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+}

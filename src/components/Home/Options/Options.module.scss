@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  a {
+    width: 100%;
+    position: relative;
+    flex: 1;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.shopBanner:hover {
+  .readMore {
+    opacity: 1;
+  }
+}
+
+.readMore {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.704);
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s;
+  p {
+    margin: auto;
+  }
+}
