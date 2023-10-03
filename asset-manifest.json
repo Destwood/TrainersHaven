@@ -1,17 +1,27 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.0a15aadb.css",
-    "main.js": "/TrainersHaven/static/js/main.ba280487.js",
+    "main.css": "/TrainersHaven/static/css/main.a2be4fa0.css",
+    "main.js": "/TrainersHaven/static/js/main.9d31288a.js",
+    "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
+    "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
+    "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
+    "static/media/banner-2.jpg": "/TrainersHaven/static/media/banner-2.339ce30b9e66cda975a7.jpg",
+    "static/media/banner-3.jpg": "/TrainersHaven/static/media/banner-3.67a8ebb4626efeef87cf.jpg",
+    "static/media/banner-1.jpg": "/TrainersHaven/static/media/banner-1.ac319ce98279760ecd0d.jpg",
     "static/media/logo.svg": "/TrainersHaven/static/media/logo.394c242844de933fdb8dccde6babf4ec.svg",
+    "static/media/instagramWhite.svg": "/TrainersHaven/static/media/instagramWhite.1400fe324a8b73eaec1ea8bfae4dce96.svg",
+    "static/media/twitterWhite.svg": "/TrainersHaven/static/media/twitterWhite.16a26734b42e77588930393d21a21582.svg",
+    "static/media/telegramWhite.svg": "/TrainersHaven/static/media/telegramWhite.8f6eeeeba38c8510f418fcc901a085b3.svg",
+    "static/media/facebookWhite.svg": "/TrainersHaven/static/media/facebookWhite.a32d054ccf4277744df569eececda630.svg",
     "static/media/fav.svg": "/TrainersHaven/static/media/fav.9768ef5f6b2d897e7435d1936b50dad2.svg",
-    "index.html": "/TrainersHaven/index.html",
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
-    "main.0a15aadb.css.map": "/TrainersHaven/static/css/main.0a15aadb.css.map",
-    "main.ba280487.js.map": "/TrainersHaven/static/js/main.ba280487.js.map"
+    "index.html": "/TrainersHaven/index.html",
+    "main.a2be4fa0.css.map": "/TrainersHaven/static/css/main.a2be4fa0.css.map",
+    "main.9d31288a.js.map": "/TrainersHaven/static/js/main.9d31288a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a15aadb.css",
-    "static/js/main.ba280487.js"
+    "static/css/main.a2be4fa0.css",
+    "static/js/main.9d31288a.js"
   ]
 }
