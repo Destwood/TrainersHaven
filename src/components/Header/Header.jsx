@@ -5,8 +5,11 @@ import logo from "../../assets/logo.svg";
 import search from "../../assets/search.svg";
 import fav from "../../assets/fav.svg";
 import cart from "../../assets/cart.svg";
+import { useDispatch } from "react-redux";
+import { jumpToPage } from "../store/actions";
 
 function Header() {
+  const dispatch = useDispatch();
   const [isInputFocused, setInputFocus] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [isBurgerChacked, setisBurgerChacked] = useState(false);
@@ -40,9 +43,30 @@ function Header() {
         {/* conteiner for adaprive reverse */}
         {/* nav */}
         <div className={style.nav}>
-          <div className={style.link}>Home</div>
-          <div className={style.link}>Cart</div>
-          <div className={style.link}>Catalog</div>
+          <div
+            className={style.link}
+            onClick={() => {
+              dispatch(jumpToPage(1));
+            }}
+          >
+            Home
+          </div>
+          <div
+            className={style.link}
+            onClick={() => {
+              dispatch(jumpToPage(2));
+            }}
+          >
+            Cart
+          </div>
+          <div
+            className={style.link}
+            onClick={() => {
+              dispatch(jumpToPage(3));
+            }}
+          >
+            Catalog
+          </div>
         </div>
 
         {/* actions */}

@@ -3,7 +3,18 @@ import React from "react";
 function Card() {
   return (
     <div className="">
-      <div className=""></div>
+      cart component
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      cart
     </div>
   );
 }

@@ -5,8 +5,6 @@ import banner1 from "../../../assets/banner-1.jpg";
 import banner2 from "../../../assets/banner-2.jpg";
 import banner3 from "../../../assets/banner-3.jpg";
 
-const containerStyle = {};
-
 function Banners() {
   return (
     <div className={style.container}>

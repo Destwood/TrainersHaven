@@ -1,27 +1,30 @@
 .container {
-  max-height: fit-content;
   max-width: 100vw;
   overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   gap: 3rem;
   padding: 0 3rem;
 }
 
 .item {
-  position: relative;
+  aspect-ratio: 4/2;
+  min-width: 25rem;
+  max-width: 30rem;
   flex: 1;
-  height: 15rem;
   padding: 2rem;
-  background-size: cover;
+  background-repeat: no-repeat;
   transition: transform 0.5s;
+  transform-origin: right center;
+  position: relative;
+  background-size: cover;
 }
 
 .now {
-  display: none;
+  display: flex;
   opacity: 0;
   position: absolute;
-  display: flex;
   align-items: center;
   font-size: 2rem;
   font-weight: 700;
@@ -45,4 +48,12 @@
 
 .item:hover .now {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+  }
+  .item {
+    min-width: 15rem;
+  }
 }

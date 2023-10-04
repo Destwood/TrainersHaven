@@ -1,8 +1,10 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   color: #fff;
   a {
+    min-width: 18rem;
     width: 100%;
     position: relative;
     flex: 1;

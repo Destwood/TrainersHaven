@@ -11,3 +11,20 @@
 body {
   font-family: "Lato", sans-serif;
 }
+
+ul {
+  list-style: none;
+}
+
+button {
+  all: unset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/*  */
+
+.App {
+  padding-top: 4.4rem;
+}
