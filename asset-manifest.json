@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.f9fade95.css",
-    "main.js": "/TrainersHaven/static/js/main.b56fbea0.js",
-    "static/media/shoes.png": "/TrainersHaven/static/media/shoes.61f923b2af44e1e0fba8.png",
+    "main.css": "/TrainersHaven/static/css/main.48e27c26.css",
+    "main.js": "/TrainersHaven/static/js/main.d59074f1.js",
+    "static/media/trainers02.png": "/TrainersHaven/static/media/trainers02.89bc78f1af24472be049.png",
+    "static/media/trainers04.png": "/TrainersHaven/static/media/trainers04.7c7bc144a639123e19f0.png",
+    "static/media/trainers03.png": "/TrainersHaven/static/media/trainers03.7f6286053c6dd7574144.png",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
+    "static/media/girl-banner.png": "/TrainersHaven/static/media/girl-banner.ed5b41d2b3c1e0d6e4d6.png",
     "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
     "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
     "static/media/banner-2.jpg": "/TrainersHaven/static/media/banner-2.339ce30b9e66cda975a7.jpg",
     "static/media/banner-3.jpg": "/TrainersHaven/static/media/banner-3.67a8ebb4626efeef87cf.jpg",
     "static/media/banner-1.jpg": "/TrainersHaven/static/media/banner-1.ac319ce98279760ecd0d.jpg",
+    "static/media/trainers01.webp": "/TrainersHaven/static/media/trainers01.645afd03c8657c40ecac.webp",
     "static/media/logo.svg": "/TrainersHaven/static/media/logo.394c242844de933fdb8dccde6babf4ec.svg",
     "static/media/instagramWhite.svg": "/TrainersHaven/static/media/instagramWhite.1400fe324a8b73eaec1ea8bfae4dce96.svg",
     "static/media/twitterWhite.svg": "/TrainersHaven/static/media/twitterWhite.16a26734b42e77588930393d21a21582.svg",
@@ -18,11 +22,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.f9fade95.css.map": "/TrainersHaven/static/css/main.f9fade95.css.map",
-    "main.b56fbea0.js.map": "/TrainersHaven/static/js/main.b56fbea0.js.map"
+    "main.48e27c26.css.map": "/TrainersHaven/static/css/main.48e27c26.css.map",
+    "main.d59074f1.js.map": "/TrainersHaven/static/js/main.d59074f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9fade95.css",
-    "static/js/main.b56fbea0.js"
+    "static/css/main.48e27c26.css",
+    "static/js/main.d59074f1.js"
   ]
 }
