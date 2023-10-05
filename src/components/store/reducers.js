@@ -17,17 +17,17 @@ const defaultState = {
       name: "Sneakers Model 2",
       price: 1200,
 
-      pic: [shoes01, shoes02, shoes03, shoes04],
+      pic: [shoes02, shoes01, shoes03, shoes03],
     },
     {
       name: "Sneakers Model 3",
       price: 800,
-      pic: [shoes01, shoes02, shoes03, shoes04],
+      pic: [shoes03, shoes02, shoes01, shoes02],
     },
     {
       name: "Sneakers Model 4",
       price: 950,
-      pic: [shoes01, shoes02, shoes03, shoes04],
+      pic: [shoes04, shoes02, shoes03, shoes01],
     },
     {
       name: "Sneakers Model 5",

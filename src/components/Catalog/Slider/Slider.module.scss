@@ -1,0 +1,139 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0 2rem;
+}
+
+// control
+.control {
+  padding: 0 2rem;
+  p {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border: 1px solid #00000073;
+  }
+}
+// container
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    flex: 1;
+  }
+}
+.img {
+  display: block;
+  max-height: 20rem;
+  margin-left: auto;
+}
+// text area
+
+.title {
+  width: 18rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  color: #747474;
+}
+
+// links
+.links {
+  height: 3rem;
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  a {
+    flex: 1;
+    display: block;
+    text-align: center;
+    max-width: 40%;
+    min-width: 7rem;
+    padding: 1rem;
+  }
+}
+
+.discovery {
+  background-color: #000;
+  color: #fff;
+}
+
+.shopNow {
+  border: 2px solid #000;
+  color: #000;
+}
+
+// adaptive
+
+.adaptiveControl {
+  display: none;
+  justify-content: space-between;
+  button {
+    font-size: 2rem;
+    width: 50%;
+    text-align: center;
+    border: 1px solid #d0cfcf;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .control {
+    display: none;
+  }
+
+  //   container
+  .container {
+    align-items: center;
+    padding: 0 1rem;
+    & > div {
+      flex: 0;
+    }
+    .img {
+      max-height: 15rem;
+    }
+  }
+  .content {
+    width: 100%; /* Розширення на весь доступний простір */
+    max-width: 100%; /* Додайте цей стиль */
+  }
+  .title {
+    width: 50vw;
+    font-size: 1.5rem;
+  }
+
+  //   links
+  .links {
+    gap: 0.5rem;
+    a {
+      padding: 0.5rem 0.1rem;
+      min-width: 5rem;
+      height: fit-content;
+      text-wrap: nowrap;
+    }
+  }
+  .adaptiveControl {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .title {
+    width: 50vw;
+    font-size: 1.2rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}

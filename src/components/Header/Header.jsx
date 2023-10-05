@@ -127,9 +127,30 @@ function Header() {
           isBurgerChacked ? style.flex : style.none
         }`}
       >
-        <div className={style.link}>Home</div>
-        <div className={style.link}>Cart</div>
-        <div className={style.link}>Catalog</div>
+        <div
+          className={style.link}
+          onClick={() => {
+            dispatch(jumpToPage(1));
+          }}
+        >
+          Home
+        </div>
+        <div
+          className={style.link}
+          onClick={() => {
+            dispatch(jumpToPage(2));
+          }}
+        >
+          Cart
+        </div>
+        <div
+          className={style.link}
+          onClick={() => {
+            dispatch(jumpToPage(3));
+          }}
+        >
+          Catalog
+        </div>
       </div>
     </div>
   );
