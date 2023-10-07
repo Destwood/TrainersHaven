@@ -57,7 +57,7 @@ function Header() {
               dispatch(jumpToPage(2));
             }}
           >
-            Cart
+            Catalog
           </div>
           <div
             className={style.link}
@@ -65,7 +65,7 @@ function Header() {
               dispatch(jumpToPage(3));
             }}
           >
-            Catalog
+            Cart
           </div>
         </div>
 
@@ -141,7 +141,7 @@ function Header() {
             dispatch(jumpToPage(2));
           }}
         >
-          Cart
+          Catalog
         </div>
         <div
           className={style.link}
@@ -149,7 +149,7 @@ function Header() {
             dispatch(jumpToPage(3));
           }}
         >
-          Catalog
+          Sales
         </div>
       </div>
     </div>

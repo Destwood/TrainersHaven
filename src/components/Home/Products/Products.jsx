@@ -4,9 +4,7 @@ import "./style.css";
 import { useSelector } from "react-redux";
 
 function Products() {
-  const sneakersArray = useSelector(
-    (state) => state.selectedType.sneakersArray
-  );
+  const sneakersArray = useSelector((state) => state.selectedType.data);
 
   // loader
   const [displayedItems, setDisplayedItems] = useState(3); // Початково відображаємо 3 елементи
@@ -25,6 +23,10 @@ function Products() {
 
   return (
     <div className={style.wrapper}>
+      <img
+        src={require(`../../../assets/photo/${`New Balance 2002 in tan`}/1.webp`)}
+        alt=""
+      />
       <div className={style.container}>
         {/* options */}
         <ul className={style.options}>
@@ -50,23 +52,23 @@ function Products() {
         {/* options end */}
         {/* item */}
         <ul className={style.list}>
-          {sneakersArray.slice(0, displayedItems).map((sneaker, index) => (
+          {sneakersArray.map((item, index) => (
             <div className={style.item} key={index}>
-              <article className="product">
+              <div className="product">
                 <div className="product__image">
                   <img
                     className={style.itemImg}
-                    src={sneaker.pic[3]}
-                    alt={sneaker.name}
+                    src={item.img[0]}
+                    alt={item.Name}
                   />
                 </div>
                 <h3 className="product__title">
-                  <a href="/">{sneaker.name}</a>
+                  <a href="/">{item.Name}</a>
                 </h3>
-                <span className="product__price">
+                {/* <span className="product__price">
                   $ {sneaker.price.toFixed(2)}
-                </span>
-              </article>
+                </span> */}
+              </div>
             </div>
           ))}
         </ul>

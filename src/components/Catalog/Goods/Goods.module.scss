@@ -40,14 +40,19 @@
 
 .goods {
   display: flex;
+  justify-content: left;
   flex-wrap: wrap;
   gap: 2rem;
   margin-left: 2rem;
 }
 
 .item {
+  width: 30%;
   position: relative;
-  width: 22%;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05);
+  }
   &::after {
     cursor: pointer;
     position: absolute;
@@ -66,4 +71,29 @@
 
 .itemImg {
   width: 100%;
+  height: fit-content;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 2rem;
+  }
+
+  .filtersList,
+  .activeFilters {
+    display: none;
+  }
+
+  .item {
+  }
+
+  .goods {
+    justify-content: left;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .goods {
+  }
 }
