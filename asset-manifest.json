@@ -1,32 +1,33 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.48e27c26.css",
-    "main.js": "/TrainersHaven/static/js/main.d59074f1.js",
-    "static/media/trainers02.png": "/TrainersHaven/static/media/trainers02.89bc78f1af24472be049.png",
-    "static/media/trainers04.png": "/TrainersHaven/static/media/trainers04.7c7bc144a639123e19f0.png",
-    "static/media/trainers03.png": "/TrainersHaven/static/media/trainers03.7f6286053c6dd7574144.png",
+    "main.css": "/TrainersHaven/static/css/main.cb232b3a.css",
+    "main.js": "/TrainersHaven/static/js/main.0181a4ae.js",
+    "static/media/3.webp": "/TrainersHaven/static/media/3.421aa147f987e4df9746.webp",
+    "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
     "static/media/girl-banner.png": "/TrainersHaven/static/media/girl-banner.ed5b41d2b3c1e0d6e4d6.png",
+    "static/media/1.webp": "/TrainersHaven/static/media/1.aceccf466e2450e2b28a.webp",
     "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
+    "static/media/4.webp": "/TrainersHaven/static/media/4.12f49170ac41a878dc9d.webp",
     "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
     "static/media/banner-2.jpg": "/TrainersHaven/static/media/banner-2.339ce30b9e66cda975a7.jpg",
     "static/media/banner-3.jpg": "/TrainersHaven/static/media/banner-3.67a8ebb4626efeef87cf.jpg",
     "static/media/banner-1.jpg": "/TrainersHaven/static/media/banner-1.ac319ce98279760ecd0d.jpg",
-    "static/media/trainers01.webp": "/TrainersHaven/static/media/trainers01.645afd03c8657c40ecac.webp",
     "static/media/logo.svg": "/TrainersHaven/static/media/logo.394c242844de933fdb8dccde6babf4ec.svg",
     "static/media/instagramWhite.svg": "/TrainersHaven/static/media/instagramWhite.1400fe324a8b73eaec1ea8bfae4dce96.svg",
     "static/media/twitterWhite.svg": "/TrainersHaven/static/media/twitterWhite.16a26734b42e77588930393d21a21582.svg",
+    "static/media/5.webp": "/TrainersHaven/static/media/5.bc2a859b16e11b88fce4.webp",
     "static/media/telegramWhite.svg": "/TrainersHaven/static/media/telegramWhite.8f6eeeeba38c8510f418fcc901a085b3.svg",
     "static/media/facebookWhite.svg": "/TrainersHaven/static/media/facebookWhite.a32d054ccf4277744df569eececda630.svg",
     "static/media/fav.svg": "/TrainersHaven/static/media/fav.9768ef5f6b2d897e7435d1936b50dad2.svg",
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.48e27c26.css.map": "/TrainersHaven/static/css/main.48e27c26.css.map",
-    "main.d59074f1.js.map": "/TrainersHaven/static/js/main.d59074f1.js.map"
+    "main.cb232b3a.css.map": "/TrainersHaven/static/css/main.cb232b3a.css.map",
+    "main.0181a4ae.js.map": "/TrainersHaven/static/js/main.0181a4ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.48e27c26.css",
-    "static/js/main.d59074f1.js"
+    "static/css/main.cb232b3a.css",
+    "static/js/main.0181a4ae.js"
   ]
 }
