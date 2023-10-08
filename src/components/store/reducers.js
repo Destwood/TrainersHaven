@@ -1,18 +1,13 @@
 import { combineReducers } from "redux";
 
 // require(`../../assets/photo/${folder}/${i}.webp`);
-console.log(require(`../../assets/photo/${`New Balance 2002 in tan`}/1.webp`));
 
 const importImages = (folder, count) => {
-  try {
-    const images = [];
-    for (let i = 1; i <= count; i++) {
-      images.push(require(`../../assets/photo/${folder}/${i}.webp`));
-    }
-    return images;
-  } catch (e) {
-    console.log(e);
+  const images = [];
+  for (let i = 1; i <= count; i++) {
+    images.push(require(`../../assets/photo/${folder}/${i}.webp`));
   }
+  return images;
 };
 
 const defaultState = {
