@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Price.module.scss";
 
-function Price() {
-  const [minPrice, setMinPrice] = useState(2500);
-  const [maxPrice, setMaxPrice] = useState(7500);
-  const priceGap = 1000;
+function Price(props) {
+  const { min, max, onPriceChange } = props; // Отримуємо функцію onPriceChange з пропсів
+
+  const [minPrice, setMinPrice] = useState(min);
+  const [maxPrice, setMaxPrice] = useState(max);
+
+  const priceGap = 1;
+
+  useEffect(() => {
+    setMinPrice(min);
+    setMaxPrice(max);
+    // Не викликайте onPriceChange тут
+  }, [min, max]);
 
   const handlePriceInputChange = (e) => {
     const { name, value } = e.target;
@@ -13,16 +22,21 @@ function Price() {
       const newMinPrice = parseInt(value);
       if (newMinPrice + priceGap <= maxPrice) {
         setMinPrice(newMinPrice);
+        onPriceChange(newMinPrice, maxPrice); // Викликаємо колбек при зміні minPrice
       }
     } else if (name === "input-max") {
       const newMaxPrice = parseInt(value);
       if (newMaxPrice - priceGap >= minPrice) {
         setMaxPrice(newMaxPrice);
+        onPriceChange(minPrice, newMaxPrice); // Викликаємо колбек при зміні maxPrice
       }
     }
   };
-  const calculateLeft = ((minPrice / 10000) * 100).toFixed(2);
-  const calculateRight = (100 - (maxPrice / 10000) * 100).toFixed(2);
+
+  const calculateLeft = (((minPrice - min) / (max - min)) * 100).toFixed(2);
+
+  const calculateRight = (((max - maxPrice) / (max - min)) * 100).toFixed(2);
+
   return (
     <div className={style.wrapper}>
       <div>
@@ -35,12 +49,14 @@ function Price() {
             className={style["input-min"]}
             value={minPrice}
             onChange={handlePriceInputChange}
+            name="input-min"
           />
         </div>
         <div className={style.separator}>-</div>
         <div className={style.field}>
           <input
             type="number"
+            name="input-max"
             className={style["input-max"]}
             value={maxPrice}
             onChange={handlePriceInputChange}
@@ -57,15 +73,16 @@ function Price() {
         <input
           type="range"
           className={style["range-min"]}
-          min="0"
-          max="10000"
+          min={min}
+          max={max}
           value={minPrice}
-          step="100"
+          step={priceGap}
           onChange={(e) => {
             if (minPrice < maxPrice) {
-              const newMin = e.target.value;
+              const newMin = parseInt(e.target.value);
               if (newMin < maxPrice) {
-                setMinPrice(e.target.value);
+                setMinPrice(newMin);
+                onPriceChange(newMin, maxPrice); // Викликаємо колбек при зміні minPrice
               }
             }
           }}
@@ -73,15 +90,16 @@ function Price() {
         <input
           type="range"
           className={style["range-max"]}
-          min="0"
-          max="10000"
+          min={min}
+          max={max}
           value={maxPrice}
-          step="100"
+          step={priceGap}
           onChange={(e) => {
             if (maxPrice > minPrice) {
-              const newMax = e.target.value;
+              const newMax = parseInt(e.target.value);
               if (newMax > minPrice) {
-                setMaxPrice(e.target.value);
+                setMaxPrice(newMax);
+                onPriceChange(minPrice, newMax); // Викликаємо колбек при зміні maxPrice
               }
             }
           }}
