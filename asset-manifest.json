@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.cb232b3a.css",
-    "main.js": "/TrainersHaven/static/js/main.07ccbd64.js",
-    "static/media/3.webp": "/TrainersHaven/static/media/3.421aa147f987e4df9746.webp",
+    "main.css": "/TrainersHaven/static/css/main.41eec108.css",
+    "main.js": "/TrainersHaven/static/js/main.8c396a32.js",
+    "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
     "static/media/girl-banner.png": "/TrainersHaven/static/media/girl-banner.ed5b41d2b3c1e0d6e4d6.png",
-    "static/media/1.webp": "/TrainersHaven/static/media/1.aceccf466e2450e2b28a.webp",
+    "static/media/1.webp": "/TrainersHaven/static/media/1.645afd03c8657c40ecac.webp",
     "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
-    "static/media/4.webp": "/TrainersHaven/static/media/4.12f49170ac41a878dc9d.webp",
+    "static/media/4.webp": "/TrainersHaven/static/media/4.31dcd8ab9ef7b24f54eb.webp",
     "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
     "static/media/banner-2.jpg": "/TrainersHaven/static/media/banner-2.339ce30b9e66cda975a7.jpg",
     "static/media/banner-3.jpg": "/TrainersHaven/static/media/banner-3.67a8ebb4626efeef87cf.jpg",
@@ -23,11 +23,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.cb232b3a.css.map": "/TrainersHaven/static/css/main.cb232b3a.css.map",
-    "main.07ccbd64.js.map": "/TrainersHaven/static/js/main.07ccbd64.js.map"
+    "main.41eec108.css.map": "/TrainersHaven/static/css/main.41eec108.css.map",
+    "main.8c396a32.js.map": "/TrainersHaven/static/js/main.8c396a32.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb232b3a.css",
-    "static/js/main.07ccbd64.js"
+    "static/css/main.41eec108.css",
+    "static/js/main.8c396a32.js"
   ]
 }
