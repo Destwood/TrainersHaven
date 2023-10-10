@@ -3,13 +3,13 @@ import style from "./Goods.module.scss";
 import "./input.css";
 import { useSelector } from "react-redux";
 
+import fav from "../../../assets/fav.svg";
+
 import Price from "./Price/Price";
 
 function Goods() {
   const sneakersArray = useSelector((state) => state.selectedType.data);
   const prices = sneakersArray.map((sneaker) => parseFloat(sneaker.Price));
-
-  // Ініціалізуємо змінну prices після отримання sneakersArray
 
   const [minPrice, setMinPrice] = useState(Math.min(...prices));
   const [maxPrice, setMaxPrice] = useState(Math.max(...prices));
@@ -21,7 +21,6 @@ function Goods() {
     Color: [],
   });
 
-  // checking for filters
   const uniqueValues = (field) => [
     ...new Set(sneakersArray.map((sneaker) => sneaker[field])),
   ];
@@ -34,19 +33,15 @@ function Goods() {
     Size: [...uniqueSizes],
     Color: uniqueValues("Color"),
   };
-  // end checking for filters
 
   // filter realization
   const handleFilterClick = (filterType, filterValue) => {
-    // Створюємо копію поточних активних фільтрів
     const newActiveFilters = { ...activeFilters };
 
     if (filterType === "Brand") {
       if (newActiveFilters.Brand === filterValue) {
-        // Якщо клікнули на активний бренд, знімаємо його
         newActiveFilters.Brand = "";
       } else {
-        // Якщо клікнули на інший бренд, встановлюємо його як активний
         newActiveFilters.Brand = filterValue;
       }
     } else {
@@ -63,41 +58,42 @@ function Goods() {
       }
     }
 
-    // Оновлюємо стан активних фільтрів
     setActiveFilters(newActiveFilters);
   };
   // filter realization end
 
-  // Функція для відображення активних фільтрів
-
   const handlePriceChange = (minPrice, maxPrice) => {
-    // Створюємо копію поточних активних фільтрів
     const newActiveFilters = { ...activeFilters };
 
-    // Оновлюємо значення фільтрів за ціною
     newActiveFilters.MinPrice = [minPrice];
     newActiveFilters.MaxPrice = [maxPrice];
 
-    // Оновлюємо стан активних фільтрів і мінімальну та максимальну ціну
     setActiveFilters(newActiveFilters);
     setMinPrice(minPrice);
     setMaxPrice(maxPrice);
   };
   return (
     <div className={style.wrapper}>
-      <div className="">
+      <div className={style.filters}>
         <div className={style.activeFilters}>
           <h5 className={style.filterTitle}>Active filters:</h5>
+
           {Object.entries(activeFilters).map(
-            ([filterType, filterValues], index) => (
-              <div key={index}>
-                {`${filterType}: ${
-                  filterType === "Brand"
-                    ? filterValues
-                    : filterValues.join(", ")
-                }`}
-              </div>
-            )
+            ([filterType, filterValues], index) => {
+              if (filterType === "Brand" && filterValues !== "") {
+                return (
+                  <div key={index}>{`${filterType}: ${filterValues}`}</div>
+                );
+              }
+              if (filterType !== "Brand" && filterValues.length > 0) {
+                return (
+                  <div key={index}>
+                    {`${filterType}: ${filterValues.join(", ")}`}
+                  </div>
+                );
+              }
+              return null; // Не відображати, якщо фільтр не вибрано
+            }
           )}
         </div>
         <div className={style.filtersList}>
@@ -191,16 +187,26 @@ function Goods() {
                 console.log(`${index}`);
               }}
             >
-              <article className="product">
-                <div className="product__image">
+              <article className={style.product}>
+                <div className={style.itemImgContainer}>
                   <img
                     className={style.itemImg}
                     src={sneaker.img[0]}
                     alt={sneaker.Name}
                   />
                 </div>
-                <h3 className="product__title">{sneaker.Name}</h3>
-                <span className="product__price">$ {sneaker.Price}</span>
+                <div className={style.underItem}>
+                  <div className={style.itemInfo}>
+                    <h3 className={style.itemTitle}>{sneaker.Name}</h3>
+                    <span className={style.itemPrice}>$ {sneaker.Price}</span>
+                  </div>
+                  <div className={style.actions}>
+                    <button>
+                      <img src={fav} alt="fav" className={`${style.icon}`} />
+                    </button>
+                    <button className={style.addToCart}>+</button>
+                  </div>
+                </div>
               </article>
             </div>
           ))}

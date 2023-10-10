@@ -48,7 +48,7 @@ function Products() {
         <ul className={style.options}>
           <li className="">
             <button
-              className={`${style.button} ${style.active}`}
+              className={`${style.button}`}
               data-filter="best-sellers"
               onClick={() => {
                 handleBestSellers();
@@ -106,20 +106,19 @@ function Products() {
             <div class="line-wobble"></div>
           </div>
         ) : (
-          <></>
+          <button
+            className={`${style.load} ${style.button} ${
+              displayedItems >= choosedOption.length ? style.disabled : ""
+            }`}
+            onClick={() => {
+              handleLoadMore();
+            }}
+            disabled={loading || displayedItems >= choosedOption.length}
+          >
+            <span>Load More...</span>
+          </button>
         )}
         {/* load more */}
-        <button
-          className={`${style.load} ${style.button} ${
-            displayedItems >= choosedOption.length ? style.disabled : ""
-          }`}
-          onClick={() => {
-            handleLoadMore();
-          }}
-          disabled={loading || displayedItems >= choosedOption.length}
-        >
-          <span>Load More...</span>
-        </button>
       </div>
       {/* load more end */}
     </div>

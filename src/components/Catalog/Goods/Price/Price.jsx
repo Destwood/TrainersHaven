@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Price.module.scss";
 
 function Price(props) {
-  const { min, max, onPriceChange } = props; // Отримуємо функцію onPriceChange з пропсів
+  const { min, max, onPriceChange } = props;
 
   const [minPrice, setMinPrice] = useState(min);
   const [maxPrice, setMaxPrice] = useState(max);
@@ -12,7 +12,6 @@ function Price(props) {
   useEffect(() => {
     setMinPrice(min);
     setMaxPrice(max);
-    // Не викликайте onPriceChange тут
   }, [min, max]);
 
   const handlePriceInputChange = (e) => {
@@ -22,13 +21,13 @@ function Price(props) {
       const newMinPrice = parseInt(value);
       if (newMinPrice + priceGap <= maxPrice) {
         setMinPrice(newMinPrice);
-        onPriceChange(newMinPrice, maxPrice); // Викликаємо колбек при зміні minPrice
+        onPriceChange(newMinPrice, maxPrice);
       }
     } else if (name === "input-max") {
       const newMaxPrice = parseInt(value);
       if (newMaxPrice - priceGap >= minPrice) {
         setMaxPrice(newMaxPrice);
-        onPriceChange(minPrice, newMaxPrice); // Викликаємо колбек при зміні maxPrice
+        onPriceChange(minPrice, newMaxPrice);
       }
     }
   };
@@ -82,7 +81,7 @@ function Price(props) {
               const newMin = parseInt(e.target.value);
               if (newMin < maxPrice) {
                 setMinPrice(newMin);
-                onPriceChange(newMin, maxPrice); // Викликаємо колбек при зміні minPrice
+                onPriceChange(newMin, maxPrice);
               }
             }
           }}
@@ -99,7 +98,7 @@ function Price(props) {
               const newMax = parseInt(e.target.value);
               if (newMax > minPrice) {
                 setMaxPrice(newMax);
-                onPriceChange(minPrice, newMax); // Викликаємо колбек при зміні maxPrice
+                onPriceChange(minPrice, newMax);
               }
             }
           }}

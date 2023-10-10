@@ -1,16 +1,16 @@
-export const setSelectedType = (selectedType) => {
-  return {
-    type: "SET_SELECTED_TYPE",
-    payload: selectedType,
-  };
-};
+// export const addFilter = ({ filterType, filterValue }) => {
+//   return {
+//     type: "ADD_FILTER",
+//     payload: { filterType, filterValue },
+//   };
+// };
 
-export const setFilter = (selectedFilter) => {
-  return {
-    type: "SET_SELECTED_FILTER",
-    payload: selectedFilter,
-  };
-};
+// export const removeFilter = ({ filterTyle, filterValue }) => {
+//   return {
+//     type: "REMOVE_FILTER",
+//     payload: { filterTyle, filterValue },
+//   };
+// };
 
 export const addToCart = (product) => {
   return {

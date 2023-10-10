@@ -5,6 +5,7 @@
 }
 
 .activeFilters {
+  height: 5rem;
   margin-bottom: 3rem;
 }
 
@@ -40,48 +41,107 @@
 
 .goods {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
   margin-left: 2rem;
+  padding: 2rem;
 }
 
 .item {
-  width: 30%;
   position: relative;
   transition: transform 0.2s;
   &:hover {
-    transform: scale(1.05);
+    .itemTitle {
+      display: none;
+    }
+    .itemPrice {
+      display: block;
+    }
+    .actions {
+      display: block;
+    }
+    .itemImg {
+      transform: scale(1.2);
+    }
   }
-  &::after {
-    cursor: pointer;
-    position: absolute;
-    content: "";
-    font-size: 5rem;
-    color: #fff;
-    text-align: center;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    top: 0;
-    left: 0;
-  }
+}
+
+.underItem {
+  height: 3rem;
+  width: 20rem;
+  display: flex;
+  margin-top: 1rem;
+  text-wrap: wrap;
+}
+
+.itemTitle {
+  font-size: 1.2rem;
+}
+
+.itemPrice {
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: none;
+}
+
+.itemImgContainer {
+  height: 20rem;
+  width: 20rem;
+  overflow: hidden;
 }
 
 .itemImg {
   width: 100%;
+  position: relative;
+  top: -5rem;
   height: fit-content;
+  transition: transform 0.2s;
+}
+
+.actions {
+  display: none;
+  width: 20%;
+  margin-left: auto;
+  button {
+    height: 2rem;
+    // transition: transform .2s;
+    &:active {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+}
+
+.icon {
+  height: 2rem;
+  &:active {
+    // transform: rotate(10deg);
+  }
+}
+
+.addToCart {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 2rem;
+  &:active {
+    transform: scale(1.1);
+  }
 }
 
 @media (max-width: 1024px) {
   .wrapper {
+    display: block;
     padding: 2rem;
   }
 
-  .filtersList,
+  .filters {
+    display: flex;
+  }
+  .filtersList {
+    width: 100%;
+    display: flex;
+  }
   .activeFilters {
-    display: none;
   }
 
   .item {

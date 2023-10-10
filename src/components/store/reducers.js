@@ -13,17 +13,6 @@ const importImages = (folder, count) => {
 const defaultState = {
   data: [
     {
-      Name: "New Balance 2002 in tan",
-      Brand: "New Balance",
-      Price: 140,
-      Size: [42, 43, 45, 46, 47],
-      Color: "Brown",
-      IsBestSeller: true,
-      IsNewProduct: true,
-      IsOnSale: false,
-      img: importImages("New Balance 2002 in tan", 4),
-    },
-    {
       Name: "Lacoste Gripshot BL21 in white",
       Brand: "Lacoste",
       Price: 100,
@@ -88,6 +77,17 @@ const defaultState = {
       IsNewProduct: false,
       IsOnSale: false,
       img: importImages("New Balance 574 in dark green and off white", 4),
+    },
+    {
+      Name: "New Balance 2002 in tan",
+      Brand: "New Balance",
+      Price: 140,
+      Size: [42, 43, 45, 46, 47],
+      Color: "Brown",
+      IsBestSeller: true,
+      IsNewProduct: true,
+      IsOnSale: false,
+      img: importImages("New Balance 2002 in tan", 4),
     },
     {
       Name: "Adidas Originals Superstar XLG in collegiate burgundy",
@@ -305,7 +305,7 @@ const defaultState = {
       img: importImages("Nike Air Max Plus Utility", 4),
     },
     {
-      Name: "Nike Air Max Plus Utility",
+      Name: "Nike Air VaporMax Plus",
       Brand: "Nike",
       Price: 250,
       Size: [42, 43, 44, 45, 46, 47],
@@ -313,7 +313,7 @@ const defaultState = {
       IsBestSeller: false,
       IsNewProduct: true,
       IsOnSale: false,
-      img: importImages("Nike Air Max Plus Utility", 4),
+      img: importImages("Nike Air VaporMax Plus", 4),
     },
   ],
   cart: [],

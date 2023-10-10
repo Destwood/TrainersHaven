@@ -59,14 +59,14 @@ function Header() {
           >
             Catalog
           </div>
-          <div
+          {/* <div
             className={style.link}
             onClick={() => {
               dispatch(jumpToPage(3));
             }}
           >
             Cart
-          </div>
+          </div> */}
         </div>
 
         {/* actions */}
@@ -108,6 +108,9 @@ function Header() {
             src={cart}
             alt="cart"
             className={`${style.icon} ${style.cart}`}
+            onClick={() => {
+              dispatch(jumpToPage(3));
+            }}
           />
           <label className={style.burger} htmlFor="burger">
             <input
@@ -143,14 +146,14 @@ function Header() {
         >
           Catalog
         </div>
-        <div
+        {/* <div
           className={style.link}
           onClick={() => {
             dispatch(jumpToPage(3));
           }}
         >
           Sales
-        </div>
+        </div> */}
       </div>
     </div>
   );
