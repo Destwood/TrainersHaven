@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.41eec108.css",
-    "main.js": "/TrainersHaven/static/js/main.8c396a32.js",
+    "main.css": "/TrainersHaven/static/css/main.8374ea1e.css",
+    "main.js": "/TrainersHaven/static/js/main.f3a64f2f.js",
     "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
     "static/media/girl-banner.png": "/TrainersHaven/static/media/girl-banner.ed5b41d2b3c1e0d6e4d6.png",
-    "static/media/1.webp": "/TrainersHaven/static/media/1.645afd03c8657c40ecac.webp",
+    "static/media/1.webp": "/TrainersHaven/static/media/1.a85cf147d971a2b3225a.webp",
     "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
     "static/media/4.webp": "/TrainersHaven/static/media/4.31dcd8ab9ef7b24f54eb.webp",
     "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
@@ -23,11 +23,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.41eec108.css.map": "/TrainersHaven/static/css/main.41eec108.css.map",
-    "main.8c396a32.js.map": "/TrainersHaven/static/js/main.8c396a32.js.map"
+    "main.8374ea1e.css.map": "/TrainersHaven/static/css/main.8374ea1e.css.map",
+    "main.f3a64f2f.js.map": "/TrainersHaven/static/js/main.f3a64f2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.41eec108.css",
-    "static/js/main.8c396a32.js"
+    "static/css/main.8374ea1e.css",
+    "static/js/main.f3a64f2f.js"
   ]
 }
