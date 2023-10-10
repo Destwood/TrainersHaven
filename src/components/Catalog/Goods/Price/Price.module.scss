@@ -81,3 +81,16 @@ input[type="range"]::-webkit-slider-thumb {
   pointer-events: auto;
   -webkit-appearance: none;
 }
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 50%;
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    min-width: 40vw;
+  }
+}

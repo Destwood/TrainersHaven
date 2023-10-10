@@ -80,19 +80,23 @@ function Goods() {
 
           {Object.entries(activeFilters).map(
             ([filterType, filterValues], index) => {
-              if (filterType === "Brand" && filterValues !== "") {
+              if (
+                filterValues.length > 0 &&
+                filterType !== "MinPrice" &&
+                filterType !== "MaxPrice"
+              ) {
+                if (filterType === "Brand" && filterValues !== "") {
+                  return (
+                    <div key={index}>{`${filterType}: ${filterValues}`}</div>
+                  );
+                }
                 return (
-                  <div key={index}>{`${filterType}: ${filterValues}`}</div>
+                  <div key={index}>{`${filterType}: ${filterValues.join(
+                    ", "
+                  )}`}</div>
                 );
               }
-              if (filterType !== "Brand" && filterValues.length > 0) {
-                return (
-                  <div key={index}>
-                    {`${filterType}: ${filterValues.join(", ")}`}
-                  </div>
-                );
-              }
-              return null; // Не відображати, якщо фільтр не вибрано
+              return null; // Не відображати, якщо фільтр не вибрано або це ціни
             }
           )}
         </div>
@@ -102,44 +106,45 @@ function Goods() {
             min={Math.min(...prices)}
             onPriceChange={handlePriceChange} // Передача функції-колбеку
           />
-
-          {Object.keys(filterData).map((filterType, index) => (
-            <div key={index} className={style.filterContainer}>
-              <h5 className={style.filterTitle}>{filterType}</h5>
-              <div className={style.filter}>
-                {filterData[filterType].map((filterValue, subIndex) => (
-                  <div className={style.filterItem} key={subIndex}>
-                    <div className={style.input}>
-                      <label className="container">
-                        <input
-                          type="checkbox"
-                          data-value={filterValue}
-                          onClick={(e) => {
-                            const value = e.target.getAttribute("data-value");
-                            // const isChecked = e.target.checked;
-                            handleFilterClick(filterType, value);
-                          }}
-                          checked={
-                            filterType === "Brand"
-                              ? activeFilters.Brand === filterValue
-                              : null
-                          }
-                        />
-                        <svg viewBox="0 0 64 64" height="1em" width="1em">
-                          <path
-                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
-                            pathLength="575.0541381835938"
-                            className="path"
-                          ></path>
-                        </svg>
-                      </label>
+          <div className={style.filterName}>
+            {Object.keys(filterData).map((filterType, index) => (
+              <div key={index} className={style[filterType]}>
+                <h5 className={style.filterTitle}>{filterType}</h5>
+                <div className={style.filter}>
+                  {filterData[filterType].map((filterValue, subIndex) => (
+                    <div className={style.filterItem} key={subIndex}>
+                      <div className={style.input}>
+                        <label className="container">
+                          <input
+                            type="checkbox"
+                            data-value={filterValue}
+                            onClick={(e) => {
+                              const value = e.target.getAttribute("data-value");
+                              // const isChecked = e.target.checked;
+                              handleFilterClick(filterType, value);
+                            }}
+                            checked={
+                              filterType === "Brand"
+                                ? activeFilters.Brand === filterValue
+                                : null
+                            }
+                          />
+                          <svg viewBox="0 0 64 64" height="1em" width="1em">
+                            <path
+                              d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                              pathLength="575.0541381835938"
+                              className="path"
+                            ></path>
+                          </svg>
+                        </label>
+                      </div>
+                      {filterValue}
                     </div>
-                    {filterValue}
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
