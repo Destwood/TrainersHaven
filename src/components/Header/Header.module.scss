@@ -202,30 +202,29 @@
   position: relative;
   z-index: -1;
   div {
+    width: 110vw;
     padding-bottom: 1rem;
     position: relative;
-    transition: right 0.6s, left 0.6s;
+    transition: top 1s;
     background-color: rgb(255, 255, 255);
+    left: -1vw;
     &:hover {
       border: 1px solid #0000004e;
       border-top: none;
     }
   }
   div:nth-child(1) {
-    right: 0;
+    top: 0;
   }
   div:nth-child(2) {
-    left: 0;
-  }
-  div:nth-child(3) {
-    right: 0;
+    top: 0;
   }
 }
 
 .dropdown > div {
   flex: 1;
   text-align: center;
-  border: 1px solid #0000004e;
+  border: 1px solid #000000;
   border-top: none;
 }
 
@@ -237,13 +236,10 @@
   height: 0;
   position: relative;
   div:nth-child(1) {
-    right: -100vw;
+    top: -10vh;
   }
   div:nth-child(2) {
-    left: -100vw;
-  }
-  div:nth-child(3) {
-    right: -100vw;
+    top: -15vh;
   }
 }
 
