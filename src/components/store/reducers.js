@@ -317,34 +317,46 @@ const defaultState = {
     },
   ],
   cart: [],
+  fav: [],
   currentPage: 1,
 };
-const cart = [];
 
-const SET_SELECTED_TYPE = "SET_SELECTED_TYPE";
 const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+const ADD_TO_FAV = "ADD_TO_FAV";
+const REMOVE_FROM_FAV = "REMOVE_FROM_FAV";
 const JUMP_TO_PAGE = "JUMP_TO_PAGE";
 
 const trainersReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case SET_SELECTED_TYPE:
-      return {};
     case ADD_TO_CART:
-      return {};
+      console.log(state.cart);
+      console.log(action.payload);
+      return { ...state, cart: [...state.cart, action.payload] };
     case REMOVE_FROM_CART:
-      return {};
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item !== action.payload),
+      };
+    case ADD_TO_FAV:
+      console.log("adding something... to fav");
+      return { ...state, fav: [...state.fav, action.payload] };
+    case REMOVE_FROM_FAV:
+      return {
+        ...state,
+        fav: state.fav.filter((item) => item !== action.payload),
+      };
     default:
-      return defaultState;
+      return state;
   }
 };
 
 const pageReducer = (state = defaultState, action) => {
   switch (action.type) {
     case JUMP_TO_PAGE:
-      return { ...state, page: action.payload };
+      return { ...state, currentPage: action.payload };
     default:
-      return defaultState;
+      return state;
   }
 };
 

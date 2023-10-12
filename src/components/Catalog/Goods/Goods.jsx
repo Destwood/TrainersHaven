@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import style from "./Goods.module.scss";
 import "./input.css";
 import { useSelector } from "react-redux";
+import { addToCart, addToFav } from "../../store/actions";
 
 import fav from "../../../assets/fav.svg";
 
 import Price from "./Price/Price";
 
 function Goods() {
+  const dispatch = useDispatch();
   const sneakersArray = useSelector((state) => state.selectedType.data);
   const prices = sneakersArray.map((sneaker) => parseFloat(sneaker.Price));
-  const [switchFilter, setSwitchFilter] = useState(true);
+  const [switchFilter, setSwitchFilter] = useState(false);
   const [minPrice, setMinPrice] = useState(Math.min(...prices));
   const [maxPrice, setMaxPrice] = useState(Math.max(...prices));
 
-  console.log(sneakersArray);
   const [activeFilters, setActiveFilters] = useState({
     Brand: "",
     Size: [],
@@ -72,6 +74,7 @@ function Goods() {
     setMinPrice(minPrice);
     setMaxPrice(maxPrice);
   };
+
   return (
     <div className={style.wrapper}>
       <div className={style.switcher}>
@@ -82,7 +85,6 @@ function Goods() {
             class="customCheckBoxInput"
             onClick={() => {
               const a = !switchFilter;
-              console.log(a);
               setSwitchFilter(a);
             }}
           />
@@ -213,14 +215,8 @@ function Goods() {
             })
             .slice(0, 1000)
             .map((sneaker, index) => (
-              <div
-                className={style.item}
-                key={index}
-                onClick={() => {
-                  console.log(`${index}`);
-                }}
-              >
-                <article className={style.product}>
+              <div className={style.item} key={index}>
+                <div className={style.product}>
                   <div className={style.itemImgContainer}>
                     <img
                       className={style.itemImg}
@@ -234,13 +230,36 @@ function Goods() {
                       <span className={style.itemPrice}>$ {sneaker.Price}</span>
                     </div>
                     <div className={style.actions}>
-                      <button>
+                      <button
+                        onClick={() =>
+                          dispatch(
+                            addToFav({
+                              img: sneaker.img[0],
+                              name: sneaker.Name,
+                              price: sneaker.Price,
+                            })
+                          )
+                        }
+                      >
                         <img src={fav} alt="fav" className={`${style.icon}`} />
                       </button>
-                      <button className={style.addToCart}>+</button>
+                      <button
+                        className={style.addToCart}
+                        onClick={() =>
+                          dispatch(
+                            addToCart({
+                              img: sneaker.img[0],
+                              name: sneaker.Name,
+                              price: sneaker.Price,
+                            })
+                          )
+                        }
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
-                </article>
+                </div>
               </div>
             ))}
         </div>

@@ -6,12 +6,12 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
 import Cart from "./components/Cart/Cart";
+import Favourite from "./components/Favourite/Favourite";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const page = useSelector((state) => state.page.page);
+  const page = useSelector((state) => state.page.currentPage);
   let currentPage = <Home />;
-  console.log(page);
 
   switch (page) {
     case 1:
@@ -23,6 +23,10 @@ function App() {
     case 3:
       currentPage = <Cart />;
       break;
+    case 4:
+      currentPage = <Favourite />;
+      break;
+
     default:
       <Home />;
   }

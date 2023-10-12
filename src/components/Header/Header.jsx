@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Header.module.scss";
 
 import logo from "../../assets/logo.svg";
@@ -29,6 +29,23 @@ function Header() {
   const handleInputBlur = () => {
     setInputFocus(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1024 && isBurgerChacked) {
+        setisBurgerChacked(true);
+      } else {
+        setisBurgerChacked(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isBurgerChacked]);
 
   return (
     <div className={style.wrapper}>
@@ -65,7 +82,7 @@ function Header() {
               dispatch(jumpToPage(3));
             }}
           >
-            Cart
+            Favourite
           </div> */}
         </div>
 
@@ -103,7 +120,14 @@ function Header() {
               X
             </div>
           </div>
-          <img src={fav} alt="fav" className={`${style.icon} ${style.fav}`} />
+          <img
+            src={fav}
+            alt="fav"
+            className={`${style.icon} ${style.fav}`}
+            onClick={() => {
+              dispatch(jumpToPage(4));
+            }}
+          />
           <img
             src={cart}
             alt="cart"
@@ -152,7 +176,7 @@ function Header() {
             dispatch(jumpToPage(3));
           }}
         >
-          Sales
+          Favourite
         </div> */}
       </div>
     </div>

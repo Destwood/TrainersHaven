@@ -24,6 +24,18 @@ export const removeFromCart = (product) => {
     payload: product,
   };
 };
+export const addToFav = (product) => {
+  return {
+    type: "ADD_TO_FAV",
+    payload: product,
+  };
+};
+export const removeFromFav = (product) => {
+  return {
+    type: "REMOVE_FROM_FAV",
+    payload: product,
+  };
+};
 
 export const jumpToPage = (page) => {
   return {
