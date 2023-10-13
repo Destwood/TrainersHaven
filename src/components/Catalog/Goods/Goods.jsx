@@ -3,15 +3,16 @@ import { useDispatch } from "react-redux";
 import style from "./Goods.module.scss";
 import "./input.css";
 import { useSelector } from "react-redux";
-import { addToCart, addToFav } from "../../store/actions";
+import { addToCart, addToFav, removeFromFav } from "../../store/actions";
 
 import fav from "../../../assets/fav.svg";
-
+import favEnd from "../../../assets/favEnd.svg";
 import Price from "./Price/Price";
 
 function Goods() {
   const dispatch = useDispatch();
   const sneakersArray = useSelector((state) => state.selectedType.data);
+  const favItems = useSelector((state) => state.selectedType.fav);
   const prices = sneakersArray.map((sneaker) => parseFloat(sneaker.Price));
   const [switchFilter, setSwitchFilter] = useState(false);
   const [minPrice, setMinPrice] = useState(Math.min(...prices));
@@ -22,7 +23,9 @@ function Goods() {
     Size: [],
     Color: [],
   });
-
+  const isSneakerInFavorites = (sneaker, favorites) => {
+    return favorites.some((favorite) => favorite.name === sneaker.Name);
+  };
   const uniqueValues = (field) => [
     ...new Set(sneakersArray.map((sneaker) => sneaker[field])),
   ];
@@ -231,29 +234,58 @@ function Goods() {
                     </div>
                     <div className={style.actions}>
                       <button
-                        onClick={() =>
-                          dispatch(
-                            addToFav({
-                              img: sneaker.img[0],
-                              name: sneaker.Name,
-                              price: sneaker.Price,
-                            })
-                          )
-                        }
+                        onClick={() => {
+                          const isFavorite = isSneakerInFavorites(
+                            sneaker,
+                            favItems
+                          );
+
+                          if (isFavorite) {
+                            const favoriteIndex = favItems.findIndex(
+                              (favItem) => favItem.name === sneaker.Name
+                            );
+
+                            if (favoriteIndex !== -1) {
+                              dispatch(removeFromFav(favoriteIndex));
+                            }
+                          } else {
+                            dispatch(
+                              addToFav({
+                                img: sneaker.img,
+                                name: sneaker.Name,
+                                price: sneaker.Price,
+                                size: sneaker.Size,
+                                color: sneaker.Color,
+                                index: index,
+                              })
+                            );
+                          }
+                        }}
                       >
-                        <img src={fav} alt="fav" className={`${style.icon}`} />
+                        <img
+                          src={
+                            isSneakerInFavorites(sneaker, favItems)
+                              ? favEnd
+                              : fav
+                          }
+                          alt="fav"
+                          className={`${style.icon}`}
+                        />
                       </button>
+
                       <button
                         className={style.addToCart}
-                        onClick={() =>
+                        onClick={() => {
                           dispatch(
                             addToCart({
-                              img: sneaker.img[0],
+                              img: sneaker.img,
                               name: sneaker.Name,
                               price: sneaker.Price,
+                              size: sneaker.size,
+                              color: sneaker.color,
                             })
-                          )
-                        }
+                          );
+                        }}
                       >
                         +
                       </button>

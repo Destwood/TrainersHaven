@@ -31,3 +31,7 @@ button {
 .App {
   padding-top: 4.4rem;
 }
+
+.pageContainer {
+  min-height: 50vh;
+}

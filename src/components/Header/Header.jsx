@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import style from "./Header.module.scss";
+import { useSelector } from "react-redux";
 
 import logo from "../../assets/logo.svg";
 import search from "../../assets/search.svg";
 import fav from "../../assets/fav.svg";
+import favEnd from "../../assets/favEnd.svg";
 import cart from "../../assets/cart.svg";
 import { useDispatch } from "react-redux";
 import { jumpToPage } from "../store/actions";
 
 function Header() {
+  const data = useSelector((state) => state.selectedType.fav);
   const dispatch = useDispatch();
   const [isInputFocused, setInputFocus] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [isBurgerChacked, setisBurgerChacked] = useState(false);
-
+  const cartData = useSelector((state) => state.selectedType.cart);
+  const favData = useSelector((state) => state.selectedType.fav);
   const handleBurgerChange = (event) => {
     setisBurgerChacked(event.target.checked);
   };
@@ -51,7 +55,12 @@ function Header() {
     <div className={style.wrapper}>
       <div className={style.header}>
         <div>
-          <div className={style.logo}>
+          <div
+            className={style.logo}
+            onClick={() => {
+              dispatch(jumpToPage(1));
+            }}
+          >
             <img src={logo} alt="logo" className={`${style.icon} `} />
             <p>Trainers Haven</p>
           </div>
@@ -121,21 +130,33 @@ function Header() {
             </div>
           </div>
           <img
-            src={fav}
+            src={data.length > 0 ? favEnd : fav}
             alt="fav"
             className={`${style.icon} ${style.fav}`}
             onClick={() => {
-              dispatch(jumpToPage(4));
+              if (favData.length > 0) {
+                dispatch(jumpToPage(4));
+              }
             }}
           />
-          <img
-            src={cart}
-            alt="cart"
-            className={`${style.icon} ${style.cart}`}
-            onClick={() => {
-              dispatch(jumpToPage(3));
-            }}
-          />
+          <div className={style.cartContainer}>
+            <img
+              src={cart}
+              alt="cart"
+              className={`${style.icon} ${style.cart}`}
+              onClick={() => {
+                if (cartData.length > 0) {
+                  dispatch(jumpToPage(3));
+                }
+              }}
+            />
+            <div
+              className={`${cartData.length > 0 ? style.counter : style.none}`}
+            >
+              <p>{`${cartData.length > 0 ? cartData.length : ""}`}</p>
+            </div>
+          </div>
+
           <label className={style.burger} htmlFor="burger">
             <input
               type="checkbox"

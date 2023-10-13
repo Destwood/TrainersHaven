@@ -1,0 +1,68 @@
+.buttonMoveToCart {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.buttonMoveToCart {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.buttonMoveToCart p {
+  margin: 0;
+  position: relative;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.buttonMoveToCart::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.buttonMoveToCart p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "To cart";
+  width: 100%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  opacity: 0;
+}
+
+.buttonMoveToCart:hover::after {
+  width: 100%;
+}
+
+.buttonMoveToCart:hover p::before {
+  opacity: 1;
+}
+
+.buttonMoveToCart:hover svg {
+  transform: translateX(1px);
+  color: var(--hovered-color);
+}
+
+.buttonMoveToCart svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}

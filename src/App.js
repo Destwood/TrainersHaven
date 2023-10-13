@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <Header />
 
-      {currentPage}
+      <div className="pageContainer">{currentPage}</div>
 
       <Footer />
     </div>

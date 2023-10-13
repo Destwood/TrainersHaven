@@ -330,21 +330,19 @@ const JUMP_TO_PAGE = "JUMP_TO_PAGE";
 const trainersReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      console.log(state.cart);
-      console.log(action.payload);
       return { ...state, cart: [...state.cart, action.payload] };
     case REMOVE_FROM_CART:
-      return {
-        ...state,
-        cart: state.cart.filter((item) => item !== action.payload),
-      };
+      const updatedCart = [...state.cart];
+      updatedCart.splice(action.payload, 1);
+      return { ...state, cart: updatedCart };
     case ADD_TO_FAV:
-      console.log("adding something... to fav");
       return { ...state, fav: [...state.fav, action.payload] };
     case REMOVE_FROM_FAV:
+      const updatedFav = [...state.fav];
+      updatedFav.splice(action.payload, 1);
       return {
         ...state,
-        fav: state.fav.filter((item) => item !== action.payload),
+        fav: updatedFav,
       };
     default:
       return state;
