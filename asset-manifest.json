@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.fa295b3c.css",
-    "main.js": "/TrainersHaven/static/js/main.b0e31ee3.js",
+    "main.css": "/TrainersHaven/static/css/main.38875ff3.css",
+    "main.js": "/TrainersHaven/static/js/main.6dcba502.js",
     "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
@@ -21,14 +21,15 @@
     "static/media/facebookWhite.svg": "/TrainersHaven/static/media/facebookWhite.a32d054ccf4277744df569eececda630.svg",
     "static/media/delete.svg": "/TrainersHaven/static/media/delete.6bd08d78953018d52713606e36af9699.svg",
     "static/media/fav.svg": "/TrainersHaven/static/media/fav.9768ef5f6b2d897e7435d1936b50dad2.svg",
+    "static/media/favEnd.svg": "/TrainersHaven/static/media/favEnd.f062e5e7110128c7f453990f9984f7be.svg",
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.fa295b3c.css.map": "/TrainersHaven/static/css/main.fa295b3c.css.map",
-    "main.b0e31ee3.js.map": "/TrainersHaven/static/js/main.b0e31ee3.js.map"
+    "main.38875ff3.css.map": "/TrainersHaven/static/css/main.38875ff3.css.map",
+    "main.6dcba502.js.map": "/TrainersHaven/static/js/main.6dcba502.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa295b3c.css",
-    "static/js/main.b0e31ee3.js"
+    "static/css/main.38875ff3.css",
+    "static/js/main.6dcba502.js"
   ]
 }
