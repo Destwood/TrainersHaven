@@ -1,20 +1,170 @@
-.item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
+.wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: center;
+  background-color: #ececec;
+  padding: 2rem 0;
+}
+
+.container {
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  gap: 2rem;
+}
+
+.bagContent {
+  width: 60%;
+  min-width: 30rem;
+}
+
+.header {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-size: 1.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.item {
+  height: 10rem;
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
 
   img {
-    max-width: 100px;
-    max-height: 100px;
-    margin: 10px 0;
+    height: 100%;
+  }
+  .info {
+    width: 100%;
+    font-weight: 700;
+    .price {
+    }
+    .name {
+      color: #000000a4;
+      margin: 1rem 0;
+    }
+    .details {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      color: #000000a4;
+    }
+    .icon {
+      height: 2rem;
+    }
   }
 
-  div {
-    font-weight: bold;
-    margin: 5px 0;
+  .close {
+    position: absolute;
+    font-weight: 700;
+    font-size: 1.2rem;
+    right: 1rem;
+  }
+}
+
+.total {
+  background-color: #fff;
+  padding: 1rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+//  checkout
+
+.checkout {
+  width: 40%;
+  background-color: #fff;
+  height: fit-content;
+  text-transform: uppercase;
+
+  padding: 1rem;
+
+  .title {
+    font-weight: 700;
+    color: #2d2d2d;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .text {
+    font-weight: 700;
+  }
+  .subTotal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    .price {
+    }
+  }
+  .deliveryConteiner {
+    width: 100%;
+    .text {
+      margin-bottom: 1rem;
+    }
+    select {
+      width: 100%;
+    }
+    margin-bottom: 1rem;
+    select {
+      color: #000000c2;
+      font-size: 1.2rem;
+      border: 3px solid #ffffff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+      outline: none;
+    }
+  }
+  button {
+    display: block;
+    width: 10rem;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    background-color: #018849;
+    &:hover {
+      background-color: #005f33;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: block;
+  }
+  .checkout {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  select {
+    display: block;
+    max-width: 60%;
+    margin: auto;
+  }
+  .total {
+    margin-bottom: 2rem;
+  }
+  .info {
+    select {
+      min-width: 3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .bagContent {
+    min-width: fit-content;
+  }
+}
+
+@media (max-width: 420px) {
+  .name {
+    font-size: 0.9rem;
   }
 }

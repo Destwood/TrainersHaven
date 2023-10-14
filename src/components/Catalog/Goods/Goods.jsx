@@ -77,7 +77,6 @@ function Goods() {
     setMinPrice(minPrice);
     setMaxPrice(maxPrice);
   };
-
   return (
     <div className={style.wrapper}>
       <div className={style.switcher}>
@@ -281,8 +280,8 @@ function Goods() {
                               img: sneaker.img,
                               name: sneaker.Name,
                               price: sneaker.Price,
-                              size: sneaker.size,
-                              color: sneaker.color,
+                              size: sneaker.Size,
+                              color: sneaker.Color,
                             })
                           );
                         }}

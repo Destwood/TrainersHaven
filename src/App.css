@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;700&display=swap");
 :root {
   scroll-behavior: smooth;
 }
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "AR One Sans", sans-serif;
 }
 
 ul {

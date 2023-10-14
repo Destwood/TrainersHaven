@@ -46,27 +46,11 @@ function Favourite() {
               </div>
               <div className={style.flex}>
                 <div className={style.color}>{sneaker.color}</div>
-                <select
-                  className={style.size}
-                  onChange={(e) => {
-                    const selectedIndex = e.target.selectedIndex - 1;
-                    const newVisibility = [...itemButtonsVisibility];
-                    newVisibility[index] = selectedIndex >= 0;
-                    setItemButtonsVisibility(newVisibility);
-                  }}
-                >
-                  {sneaker.size.map((item, sizeIndex) => (
-                    <option
-                      key={sizeIndex}
-                      value={item}
-                      onClick={() => {
-                        setSizeToCart(item);
-                      }}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+
+                {sneaker.size.map((item, sizeIndex) => (
+                  <>{item} </>
+                ))}
+
                 <button
                   className={`${style.button} buttonMoveToCart`}
                   onClick={() => {

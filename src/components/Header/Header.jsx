@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./Header.module.scss";
 import { useSelector } from "react-redux";
+import Preview from "./Preview/Preview";
 
 import logo from "../../assets/logo.svg";
 import search from "../../assets/search.svg";
@@ -11,11 +12,13 @@ import { useDispatch } from "react-redux";
 import { jumpToPage } from "../store/actions";
 
 function Header() {
-  const data = useSelector((state) => state.selectedType.fav);
   const dispatch = useDispatch();
-  const [isInputFocused, setInputFocus] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [showPreview, setShowPreview] = useState(false);
+  const [isInputFocused, setInputFocus] = useState(false);
   const [isBurgerChacked, setisBurgerChacked] = useState(false);
+  const page = useSelector((state) => state.page.currentPage);
+  console.log(page);
   const cartData = useSelector((state) => state.selectedType.cart);
   const favData = useSelector((state) => state.selectedType.fav);
   const handleBurgerChange = (event) => {
@@ -130,7 +133,7 @@ function Header() {
             </div>
           </div>
           <img
-            src={data.length > 0 ? favEnd : fav}
+            src={favData.length > 0 ? favEnd : fav}
             alt="fav"
             className={`${style.icon} ${style.fav}`}
             onClick={() => {
@@ -144,8 +147,19 @@ function Header() {
               src={cart}
               alt="cart"
               className={`${style.icon} ${style.cart}`}
-              onClick={() => {
+              onMouseEnter={() => {
+                if (cartData.length > 0 && page !== 3) {
+                  setShowPreview(true);
+                }
+              }}
+              onMouseLeave={() => {
                 if (cartData.length > 0) {
+                  setShowPreview(false);
+                }
+              }}
+              onClick={() => {
+                if (cartData.length > 0 && page !== 3) {
+                  console.log(page);
                   dispatch(jumpToPage(3));
                 }
               }}
@@ -199,6 +213,60 @@ function Header() {
         >
           Favourite
         </div> */}
+      </div>
+      <div
+        className={`${style.previewContainer} ${
+          showPreview ? style.active : ""
+        }`}
+        onMouseEnter={() => {
+          if (page !== 3) {
+            setShowPreview(true);
+          }
+        }}
+        onMouseLeave={() => {
+          setShowPreview(false);
+        }}
+      >
+        <div className={style.cartPreview}>
+          <div className={style.previewHeader}>
+            <div className={style.previewHeader_Title}>
+              My Bag,
+              <span> {cartData.length} items</span>
+            </div>
+            <button
+              className={style.close}
+              onClick={() => {
+                setShowPreview(false);
+              }}
+            >
+              X
+            </button>
+          </div>
+          <div className={style.previewList}>
+            {cartData.map((item, index) => (
+              <div className={style.previewItem}>
+                <img src={item.img[0]} alt="" className={style.previewImg} />
+                <div className="">
+                  <div className="">{item.name}</div>
+                  <div className="">$ {item.price}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={style.previewFooter}>
+            <button
+              className={style.viewBag}
+              onClick={() => {
+                dispatch(jumpToPage(3));
+                setShowPreview(false);
+              }}
+            >
+              View bag
+            </button>
+            <button className={style.checkout}>Checkout</button>
+          </div>
+          <div className={style.previewNote}>Free Delivery Worldwide*</div>
+        </div>
       </div>
     </div>
   );
