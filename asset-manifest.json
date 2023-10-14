@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.c1b8fd5a.css",
-    "main.js": "/TrainersHaven/static/js/main.48867b02.js",
+    "main.css": "/TrainersHaven/static/css/main.27ca216b.css",
+    "main.js": "/TrainersHaven/static/js/main.2a117780.js",
     "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
@@ -25,11 +25,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.c1b8fd5a.css.map": "/TrainersHaven/static/css/main.c1b8fd5a.css.map",
-    "main.48867b02.js.map": "/TrainersHaven/static/js/main.48867b02.js.map"
+    "main.27ca216b.css.map": "/TrainersHaven/static/css/main.27ca216b.css.map",
+    "main.2a117780.js.map": "/TrainersHaven/static/js/main.2a117780.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1b8fd5a.css",
-    "static/js/main.48867b02.js"
+    "static/css/main.27ca216b.css",
+    "static/js/main.2a117780.js"
   ]
 }
