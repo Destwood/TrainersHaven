@@ -8,6 +8,7 @@ import Catalog from "./components/Catalog/Catalog";
 import Cart from "./components/Cart/Cart";
 import Favourite from "./components/Favourite/Favourite";
 import Footer from "./components/Footer/Footer";
+import Item from "./components/Item/Item";
 
 function App() {
   const page = useSelector((state) => state.page.currentPage);
@@ -26,7 +27,9 @@ function App() {
     case 4:
       currentPage = <Favourite />;
       break;
-
+    case 5:
+      currentPage = <Item />;
+      break;
     default:
       <Home />;
   }

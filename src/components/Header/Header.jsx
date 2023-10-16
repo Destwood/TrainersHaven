@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./Header.module.scss";
 import { useSelector } from "react-redux";
-import Preview from "./Preview/Preview";
 
 import logo from "../../assets/logo.svg";
 import search from "../../assets/search.svg";
@@ -9,7 +8,8 @@ import fav from "../../assets/fav.svg";
 import favEnd from "../../assets/favEnd.svg";
 import cart from "../../assets/cart.svg";
 import { useDispatch } from "react-redux";
-import { jumpToPage } from "../store/actions";
+import { jumpToPage, removeFromCart } from "../store/actions";
+import del from "../../assets/delete.svg";
 
 function Header() {
   const dispatch = useDispatch();
@@ -18,7 +18,6 @@ function Header() {
   const [isInputFocused, setInputFocus] = useState(false);
   const [isBurgerChacked, setisBurgerChacked] = useState(false);
   const page = useSelector((state) => state.page.currentPage);
-  console.log(page);
   const cartData = useSelector((state) => state.selectedType.cart);
   const favData = useSelector((state) => state.selectedType.fav);
   const handleBurgerChange = (event) => {
@@ -249,6 +248,14 @@ function Header() {
                 <div className="">
                   <div className="">{item.name}</div>
                   <div className="">$ {item.price}</div>
+                </div>
+                <div
+                  className={style.removeContainer}
+                  onClick={() => {
+                    dispatch(removeFromCart(index));
+                  }}
+                >
+                  <img src={del} alt="remove" className={style.remove} />
                 </div>
               </div>
             ))}

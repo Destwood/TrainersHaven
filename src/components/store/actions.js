@@ -37,7 +37,18 @@ export const removeFromFav = (product) => {
   };
 };
 
+export const setActiveItem = (item) => {
+  return {
+    type: "SET_ACTIVE_ITEM",
+    payload: item,
+  };
+};
+
 export const jumpToPage = (page) => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
   return {
     type: "JUMP_TO_PAGE",
     payload: page,

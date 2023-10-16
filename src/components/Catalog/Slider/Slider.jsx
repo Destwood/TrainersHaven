@@ -6,9 +6,9 @@ import img from "../../../assets/girl-banner.png";
 function Slider() {
   return (
     <div className={style.wrapper}>
-      <button className={style.control}>
+      {/* <button className={style.control}>
         <p>&lt;</p>
-      </button>
+      </button> */}
       <div className={style.container}>
         <div className={style.content}>
           <h2 className={style.title}>
@@ -31,13 +31,13 @@ function Slider() {
           <img className={style.img} src={img} alt="girl-banner" />
         </div>
       </div>
-      <button className={style.control}>
+      {/* <button className={style.control}>
         <p>&gt;</p>
       </button>
       <div className={style.adaptiveControl}>
         <button>&lt;</button>
         <button>&gt;</button>
-      </div>
+      </div> */}
     </div>
   );
 }

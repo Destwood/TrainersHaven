@@ -54,7 +54,8 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .link {
@@ -301,6 +302,7 @@
     max-height: 25rem;
     overflow-y: auto;
     .previewItem {
+      position: relative;
       display: flex;
       gap: 1rem;
       padding: 1rem 0;
@@ -340,7 +342,21 @@
     font-weight: 700;
   }
 }
-
+.removeContainer {
+  position: absolute;
+  border-radius: 50%;
+  right: 0rem;
+  top: 6rem;
+  opacity: 0.8;
+  .remove {
+    width: 2rem;
+    height: 2rem;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #2d2d2d76;
+  }
+}
 /* Media Queries */
 
 @media (max-width: 1024px) {

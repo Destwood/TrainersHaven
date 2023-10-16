@@ -3,7 +3,13 @@ import { useDispatch } from "react-redux";
 import style from "./Goods.module.scss";
 import "./input.css";
 import { useSelector } from "react-redux";
-import { addToCart, addToFav, removeFromFav } from "../../store/actions";
+import {
+  addToCart,
+  addToFav,
+  removeFromFav,
+  setActiveItem,
+  jumpToPage,
+} from "../../store/actions";
 
 import fav from "../../../assets/fav.svg";
 import favEnd from "../../../assets/favEnd.svg";
@@ -13,28 +19,28 @@ function Goods() {
   const dispatch = useDispatch();
   const sneakersArray = useSelector((state) => state.selectedType.data);
   const favItems = useSelector((state) => state.selectedType.fav);
-  const prices = sneakersArray.map((sneaker) => parseFloat(sneaker.Price));
+  const prices = sneakersArray.map((sneaker) => parseFloat(sneaker.price));
   const [switchFilter, setSwitchFilter] = useState(false);
   const [minPrice, setMinPrice] = useState(Math.min(...prices));
   const [maxPrice, setMaxPrice] = useState(Math.max(...prices));
 
   const [activeFilters, setActiveFilters] = useState({
-    Brand: "",
-    Size: [],
-    Color: [],
+    brand: "",
+    size: [],
+    color: [],
   });
   const isSneakerInFavorites = (sneaker, favorites) => {
-    return favorites.some((favorite) => favorite.name === sneaker.Name);
+    return favorites.some((favorite) => favorite.name === sneaker.name);
   };
   const uniqueValues = (field) => [
     ...new Set(sneakersArray.map((sneaker) => sneaker[field])),
   ];
   const allSizes = sneakersArray.reduce((accumulator, sneaker) => {
-    return accumulator.concat(sneaker.Size);
+    return accumulator.concat(sneaker.size);
   }, []);
   const uniqueSizes = [...new Set(allSizes)];
   const filterData = {
-    Brand: uniqueValues("Brand"),
+    brand: uniqueValues("brand"),
     Size: [...uniqueSizes],
     Color: uniqueValues("Color"),
   };
@@ -43,11 +49,11 @@ function Goods() {
   const handleFilterClick = (filterType, filterValue) => {
     const newActiveFilters = { ...activeFilters };
 
-    if (filterType === "Brand") {
-      if (newActiveFilters.Brand === filterValue) {
-        newActiveFilters.Brand = "";
+    if (filterType === "brand") {
+      if (newActiveFilters.brand === filterValue) {
+        newActiveFilters.brand = "";
       } else {
-        newActiveFilters.Brand = filterValue;
+        newActiveFilters.brand = filterValue;
       }
     } else {
       if (newActiveFilters[filterType]) {
@@ -76,6 +82,10 @@ function Goods() {
     setActiveFilters(newActiveFilters);
     setMinPrice(minPrice);
     setMaxPrice(maxPrice);
+  };
+  const setActive = (item) => {
+    dispatch(setActiveItem(item));
+    dispatch(jumpToPage(5));
   };
   return (
     <div className={style.wrapper}>
@@ -113,7 +123,7 @@ function Goods() {
                   filterType !== "MinPrice" &&
                   filterType !== "MaxPrice"
                 ) {
-                  if (filterType === "Brand" && filterValues !== "") {
+                  if (filterType === "brand" && filterValues !== "") {
                     return (
                       <div key={index}>{`${filterType}: ${filterValues}`}</div>
                     );
@@ -124,7 +134,7 @@ function Goods() {
                     )}`}</div>
                   );
                 }
-                return null; // Не відображати, якщо фільтр не вибрано або це ціни
+                return null;
               }
             )}
           </div>
@@ -153,8 +163,8 @@ function Goods() {
                                 handleFilterClick(filterType, value);
                               }}
                               checked={
-                                filterType === "Brand"
-                                  ? activeFilters.Brand === filterValue
+                                filterType === "brand"
+                                  ? activeFilters.brand === filterValue
                                   : null
                               }
                             />
@@ -181,35 +191,35 @@ function Goods() {
           {sneakersArray
             .filter((sneaker) => {
               if (
-                activeFilters.Brand &&
-                sneaker.Brand !== activeFilters.Brand
+                activeFilters.brand &&
+                sneaker.brand !== activeFilters.brand
               ) {
                 return false;
               }
               if (
-                activeFilters.Color.length > 0 &&
-                !activeFilters.Color.includes(sneaker.Color)
+                activeFilters.color.length > 0 &&
+                !activeFilters.color.includes(sneaker.color)
               ) {
                 return false;
               }
               if (
-                activeFilters.Size.length > 0 &&
-                !activeFilters.Size.some((selectedSize) =>
-                  sneaker.Size.includes(parseInt(selectedSize, 10))
+                activeFilters.size.length > 0 &&
+                !activeFilters.size.some((selectedSize) =>
+                  sneaker.size.includes(parseInt(selectedSize, 10))
                 )
               ) {
                 return false;
               }
               if (
                 activeFilters.MinPrice &&
-                parseFloat(sneaker.Price) < activeFilters.MinPrice[0]
+                parseFloat(sneaker.price) < activeFilters.MinPrice[0]
               ) {
                 return false;
               }
 
               if (
                 activeFilters.MaxPrice &&
-                parseFloat(sneaker.Price) > activeFilters.MaxPrice[0]
+                parseFloat(sneaker.price) > activeFilters.MaxPrice[0]
               ) {
                 return false;
               }
@@ -223,13 +233,19 @@ function Goods() {
                     <img
                       className={style.itemImg}
                       src={sneaker.img[0]}
-                      alt={sneaker.Name}
+                      alt={sneaker.name}
+                      onClick={() => setActive(sneaker)}
                     />
                   </div>
                   <div className={style.underItem}>
                     <div className={style.itemInfo}>
-                      <h3 className={style.itemTitle}>{sneaker.Name}</h3>
-                      <span className={style.itemPrice}>$ {sneaker.Price}</span>
+                      <h3
+                        className={style.itemTitle}
+                        onClick={() => setActive(sneaker)}
+                      >
+                        {sneaker.name}
+                      </h3>
+                      <span className={style.itemPrice}>$ {sneaker.price}</span>
                     </div>
                     <div className={style.actions}>
                       <button
@@ -241,23 +257,14 @@ function Goods() {
 
                           if (isFavorite) {
                             const favoriteIndex = favItems.findIndex(
-                              (favItem) => favItem.name === sneaker.Name
+                              (favItem) => favItem.name === sneaker.name
                             );
 
                             if (favoriteIndex !== -1) {
                               dispatch(removeFromFav(favoriteIndex));
                             }
                           } else {
-                            dispatch(
-                              addToFav({
-                                img: sneaker.img,
-                                name: sneaker.Name,
-                                price: sneaker.Price,
-                                size: sneaker.Size,
-                                color: sneaker.Color,
-                                index: index,
-                              })
-                            );
+                            dispatch(addToFav(sneaker));
                           }
                         }}
                       >
@@ -275,15 +282,7 @@ function Goods() {
                       <button
                         className={style.addToCart}
                         onClick={() => {
-                          dispatch(
-                            addToCart({
-                              img: sneaker.img,
-                              name: sneaker.Name,
-                              price: sneaker.Price,
-                              size: sneaker.Size,
-                              color: sneaker.Color,
-                            })
-                          );
+                          dispatch(addToCart(sneaker));
                         }}
                       >
                         +

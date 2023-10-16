@@ -11,6 +11,7 @@ function Cart() {
   const favItems = useSelector((state) => state.selectedType.fav);
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.selectedType.cart);
+  const [delivertPrice, setDeliveryPrice] = useState(0);
   const isSneakerInFavorites = (sneaker, favorites) => {
     return favorites.some((favorite) => favorite.name === sneaker.Name);
   };
@@ -65,11 +66,28 @@ function Cart() {
           <div className={style.title}>Total:</div>
           <div className={style.subTotal}>
             <div className={style.text}>sub-total</div>
-            <div className={style.price}>$ {total.toFixed(2)}</div>{" "}
+            <div className={style.price}>
+              $ {(total + delivertPrice).toFixed(2)}
+            </div>
           </div>
           <div className={style.deliveryConteiner}>
             <div className={style.text}>Delivery</div>
-            <select>
+            <select
+              className={style.delivery}
+              onChange={(e) => {
+                // Видаліть цей обробник подій
+                const selectedValue = e.target.value;
+                if (selectedValue === "Standart - free") {
+                  setDeliveryPrice(0);
+                } else if (selectedValue === "Express Delivery - $10") {
+                  setDeliveryPrice(10);
+                } else if (
+                  selectedValue === "Gift Wrapping and Delivery - $25"
+                ) {
+                  setDeliveryPrice(25);
+                }
+              }}
+            >
               <option>Standart - free</option>
               <option>Express Delivery - $10</option>
               <option>Gift Wrapping and Delivery - $25</option>

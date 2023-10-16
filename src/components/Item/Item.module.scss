@@ -1,0 +1,142 @@
+@mixin activeItem {
+  box-shadow: 0px 0px 8px 5px rgba(70, 150, 188, 0.485);
+}
+
+.wrapper {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: fit-content;
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+}
+// left side
+.sideContainer {
+  margin-bottom: 1rem;
+}
+.active {
+  @include activeItem;
+}
+.sideImg {
+  height: 3rem;
+}
+// main
+
+.mainImg {
+  max-width: 50vw;
+  max-height: 35rem;
+}
+
+// right side
+
+.info {
+  width: 15rem;
+  border-left: 1px solid #0000006c;
+  height: fit-content;
+  padding: 1rem;
+  & > div {
+    margin-bottom: 1rem;
+  }
+}
+
+.name {
+  font-size: 1.2rem;
+}
+
+.price {
+  font-weight: 700;
+  color: #000000c2;
+}
+
+.colorContainer {
+  .colorTitle {
+    font-weight: 700;
+    color: #2d2d2d;
+  }
+  .color {
+    text-transform: uppercase;
+  }
+}
+
+.size {
+  display: block;
+  max-width: 60%;
+  color: #000000c2;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  border: 3px solid #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  margin-bottom: 2rem;
+  &:focus {
+    border: 3px solid #ffffff;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    @include activeItem;
+  }
+}
+
+.submit {
+  display: block;
+  width: 10rem;
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #018849;
+  margin-bottom: 4rem;
+  &:hover {
+    background-color: #005f33;
+  }
+}
+
+.addInfo {
+  width: 100%;
+}
+
+.infoItem {
+  margin-bottom: 1rem;
+}
+
+.infoTitle {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .views {
+    display: flex;
+    justify-content: space-around;
+  }
+  .mainImg {
+    max-width: 100%;
+  }
+  .info {
+    width: 100%;
+    border: none;
+  }
+  .submit {
+    margin: auto;
+  }
+}

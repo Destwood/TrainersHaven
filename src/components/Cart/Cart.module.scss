@@ -60,6 +60,10 @@
     .icon {
       height: 2rem;
     }
+    select {
+      min-width: 3rem;
+      font-weight: 700;
+    }
   }
 
   .close {
@@ -108,16 +112,15 @@
     .text {
       margin-bottom: 1rem;
     }
-    select {
+    .delivery {
       width: 100%;
-    }
-    margin-bottom: 1rem;
-    select {
       color: #000000c2;
       font-size: 1.2rem;
+      font-weight: 700;
       border: 3px solid #ffffff;
       border-bottom: 1px solid rgba(0, 0, 0, 0);
       outline: none;
+      margin-bottom: 2rem;
     }
   }
   button {
@@ -125,6 +128,8 @@
     width: 10rem;
     margin: auto;
     padding: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     text-align: center;
     color: #fff;
     background-color: #018849;
@@ -142,18 +147,13 @@
     width: 100%;
     margin-bottom: 2rem;
   }
-  select {
+  .delivert {
     display: block;
     max-width: 60%;
     margin: auto;
   }
   .total {
     margin-bottom: 2rem;
-  }
-  .info {
-    select {
-      min-width: 3rem;
-    }
   }
 }
 
