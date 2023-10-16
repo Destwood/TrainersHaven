@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.15a2865b.css",
-    "main.js": "/TrainersHaven/static/js/main.1b4e0feb.js",
+    "main.css": "/TrainersHaven/static/css/main.f1b24309.css",
+    "main.js": "/TrainersHaven/static/js/main.5942a151.js",
     "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
     "static/media/Men.jpg": "/TrainersHaven/static/media/Men.48ccca341d3d4d5d786b.jpg",
-    "static/media/1slider.jpg": "/TrainersHaven/static/media/1slider.4f236cd7e5e9f6402497.jpg",
+    "static/media/newBalance.png": "/TrainersHaven/static/media/newBalance.24b8ced4f05eb268567e.png",
     "static/media/1.webp": "/TrainersHaven/static/media/1.a85cf147d971a2b3225a.webp",
     "static/media/Women.jpg": "/TrainersHaven/static/media/Women.95ef922795f726b50f17.jpg",
     "static/media/4.webp": "/TrainersHaven/static/media/4.31dcd8ab9ef7b24f54eb.webp",
+    "static/media/nike.png": "/TrainersHaven/static/media/nike.8bd784d397337281cc95.png",
     "static/media/hero.jpg": "/TrainersHaven/static/media/hero.f7f55171031607d16d6b.jpg",
-    "static/media/3slider.jpg": "/TrainersHaven/static/media/3slider.1d0056148175808c28eb.jpg",
+    "static/media/lacoste.png": "/TrainersHaven/static/media/lacoste.05c7c851e7b18dee9dd9.png",
     "static/media/banner-2.jpg": "/TrainersHaven/static/media/banner-2.339ce30b9e66cda975a7.jpg",
-    "static/media/2slider.jpg": "/TrainersHaven/static/media/2slider.a1cea1701a3d113afdf5.jpg",
+    "static/media/Asics.jpg": "/TrainersHaven/static/media/Asics.a1cea1701a3d113afdf5.jpg",
     "static/media/banner-3.jpg": "/TrainersHaven/static/media/banner-3.67a8ebb4626efeef87cf.jpg",
     "static/media/banner-1.jpg": "/TrainersHaven/static/media/banner-1.ac319ce98279760ecd0d.jpg",
     "static/media/logo.svg": "/TrainersHaven/static/media/logo.394c242844de933fdb8dccde6babf4ec.svg",
@@ -27,11 +28,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.15a2865b.css.map": "/TrainersHaven/static/css/main.15a2865b.css.map",
-    "main.1b4e0feb.js.map": "/TrainersHaven/static/js/main.1b4e0feb.js.map"
+    "main.f1b24309.css.map": "/TrainersHaven/static/css/main.f1b24309.css.map",
+    "main.5942a151.js.map": "/TrainersHaven/static/js/main.5942a151.js.map"
   },
   "entrypoints": [
-    "static/css/main.15a2865b.css",
-    "static/js/main.1b4e0feb.js"
+    "static/css/main.f1b24309.css",
+    "static/js/main.5942a151.js"
   ]
 }
