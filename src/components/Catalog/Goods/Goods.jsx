@@ -23,7 +23,7 @@ function Goods() {
   const [switchFilter, setSwitchFilter] = useState(false);
   const [minPrice, setMinPrice] = useState(Math.min(...prices));
   const [maxPrice, setMaxPrice] = useState(Math.max(...prices));
-
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [activeFilters, setActiveFilters] = useState({
     brand: "",
     size: [],
@@ -41,10 +41,9 @@ function Goods() {
   const uniqueSizes = [...new Set(allSizes)];
   const filterData = {
     brand: uniqueValues("brand"),
-    Size: [...uniqueSizes],
-    Color: uniqueValues("Color"),
+    size: [...uniqueSizes],
+    color: uniqueValues("color"),
   };
-
   // filter realization
   const handleFilterClick = (filterType, filterValue) => {
     const newActiveFilters = { ...activeFilters };
@@ -71,6 +70,7 @@ function Goods() {
 
     setActiveFilters(newActiveFilters);
   };
+
   // filter realization end
 
   const handlePriceChange = (minPrice, maxPrice) => {
@@ -142,7 +142,7 @@ function Goods() {
             <Price
               max={Math.max(...prices)}
               min={Math.min(...prices)}
-              onPriceChange={handlePriceChange} // Передача функції-колбеку
+              onPriceChange={handlePriceChange}
             />
             <div className={style.filterName}>
               {Object.keys(filterData).map((filterType, index) => (
@@ -232,9 +232,17 @@ function Goods() {
                   <div className={style.itemImgContainer}>
                     <img
                       className={style.itemImg}
-                      src={sneaker.img[0]}
+                      src={
+                        hoveredIndex === index ? sneaker.img[1] : sneaker.img[0]
+                      }
                       alt={sneaker.name}
                       onClick={() => setActive(sneaker)}
+                      onMouseEnter={() => {
+                        setHoveredIndex(index);
+                      }}
+                      onMouseLeave={() => {
+                        setHoveredIndex(null);
+                      }}
                     />
                   </div>
                   <div className={style.underItem}>

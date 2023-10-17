@@ -51,8 +51,7 @@
 }
 
 .item {
-  min-width: 30%;
-  flex: 1;
+  width: 30%;
   position: relative;
   transition: transform 0.2s;
 }
@@ -123,6 +122,9 @@
   }
 }
 .switcher {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 .none {
   display: none;

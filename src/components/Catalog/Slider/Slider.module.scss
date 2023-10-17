@@ -1,6 +1,6 @@
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 5rem 0 2rem;
 }
 
@@ -13,33 +13,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 4rem;
     border: 1px solid #00000073;
   }
 }
 // container
 .container {
+  height: 35rem;
   display: flex;
   justify-content: space-between;
-
+  gap: 2rem;
   & > div {
     flex: 1;
   }
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.imgConteiner {
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
 .img {
   display: block;
-  max-height: 20rem;
+  width: 100%;
   margin-left: auto;
 }
 // text area
 
 .title {
   width: 18rem;
-  font-size: 2rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
 }
 
 .desc {
+  font-size: 2rem;
   color: #747474;
 }
 
@@ -82,7 +96,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1240px) {
   .wrapper {
     flex-direction: column;
     padding: 2rem 0;
@@ -94,22 +108,22 @@
 
   //   container
   .container {
-    align-items: center;
-    padding: 0 1rem;
-    & > div {
-      flex: 0;
+    height: fit-content;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 2rem;
+    .title {
+      font-size: 5vw;
+      width: fit-content;
     }
+    .desc {
+      font-size: 3.5vw;
+    }
+
     .img {
-      max-height: 15rem;
+      width: 70vw;
+      margin: auto;
     }
-  }
-  .content {
-    width: 100%; /* Розширення на весь доступний простір */
-    max-width: 100%; /* Додайте цей стиль */
-  }
-  .title {
-    width: 50vw;
-    font-size: 1.5rem;
   }
 
   //   links
@@ -124,16 +138,15 @@
   }
   .adaptiveControl {
     display: flex;
+    margin-top: 2rem;
+    button {
+      font-size: 4rem;
+    }
   }
 }
 
-@media (max-width: 420px) {
-  .title {
-    width: 50vw;
-    font-size: 1.2rem;
-  }
-
+@media (max-width: 768px) {
   .desc {
-    font-size: 0.9rem;
+    height: 10rem;
   }
 }

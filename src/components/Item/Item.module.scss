@@ -26,8 +26,7 @@
 // main
 
 .mainImg {
-  max-width: 50vw;
-  max-height: 35rem;
+  width: 50vw;
 }
 
 // right side
@@ -63,13 +62,13 @@
 
 .size {
   display: block;
-  max-width: 60%;
+  width: 100%;
   color: #000000c2;
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
   border: 3px solid #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #000;
   margin-bottom: 2rem;
   &:focus {
     border: 3px solid #ffffff;
@@ -130,7 +129,7 @@ a {
     justify-content: space-around;
   }
   .mainImg {
-    max-width: 100%;
+    width: 100%;
   }
   .info {
     width: 100%;

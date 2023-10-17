@@ -27,7 +27,6 @@ function Item() {
     dispatch(jumpToPage(3));
   };
 
-  console.log(sneaker);
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
@@ -87,7 +86,11 @@ function Item() {
               >
                 <p>Brand</p>
                 <div className="">
-                  <input type="checkbox" id="checkbox" checked={showInfo[0]} />
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={showInfo[0]}
+                  />
                   <label htmlFor="brandCheckbox" className="toggle">
                     <div className="bars" id="bar1"></div>
                     <div className="bars" id="bar2"></div>
@@ -111,7 +114,11 @@ function Item() {
               >
                 <p>Size & Fit</p>
                 <div className="">
-                  <input type="checkbox" id="checkbox" checked={showInfo[1]} />
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    checked={showInfo[1]}
+                  />
                   <label for="checkbox" class="toggle">
                     <div class="bars" id="bar1"></div>
                     <div class="bars" id="bar2"></div>
@@ -137,7 +144,11 @@ function Item() {
               >
                 <p>Look After Me</p>
                 <div className="">
-                  <input type="checkbox" id="checkbox" checked={showInfo[2]} />
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    checked={showInfo[2]}
+                  />
                   <label for="checkbox" class="toggle">
                     <div class="bars" id="bar1"></div>
                     <div class="bars" id="bar2"></div>
