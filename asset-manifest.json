@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TrainersHaven/static/css/main.bed8143a.css",
+    "main.css": "/TrainersHaven/static/css/main.bf3c6c44.css",
     "main.js": "/TrainersHaven/static/js/main.b945e403.js",
     "static/media/3.webp": "/TrainersHaven/static/media/3.12f49170ac41a878dc9d.webp",
     "static/media/2.webp": "/TrainersHaven/static/media/2.8e13c0b8b338378cd59e.webp",
@@ -28,11 +28,11 @@
     "static/media/cart.svg": "/TrainersHaven/static/media/cart.0312147298b7f757bf0e67b674447789.svg",
     "static/media/search.svg": "/TrainersHaven/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
     "index.html": "/TrainersHaven/index.html",
-    "main.bed8143a.css.map": "/TrainersHaven/static/css/main.bed8143a.css.map",
+    "main.bf3c6c44.css.map": "/TrainersHaven/static/css/main.bf3c6c44.css.map",
     "main.b945e403.js.map": "/TrainersHaven/static/js/main.b945e403.js.map"
   },
   "entrypoints": [
-    "static/css/main.bed8143a.css",
+    "static/css/main.bf3c6c44.css",
     "static/js/main.b945e403.js"
   ]
 }
